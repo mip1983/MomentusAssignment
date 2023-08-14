@@ -1,0 +1,58 @@
+
+<div class="row mb-3">
+    <div class="col-xs-12">
+        <button mat-raised-button color="primary">
+            Reset
+        </button> 
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+
+        <table mat-table [dataSource]="postsDataSource" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="favorite">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let post">
+                    // TODO: Clickable star
+                    {{post.favorite}}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="title">
+                <th mat-header-cell *matHeaderCellDef>Title</th>
+                <td mat-cell *matCellDef="let post">
+                    {{post.title}}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="author">
+                <th mat-header-cell *matHeaderCellDef>Author</th>
+                <td mat-cell *matCellDef="let post">
+                    {{post.author}}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="comments">
+                <th mat-header-cell *matHeaderCellDef># of Comments</th>
+                <td mat-cell *matCellDef="let post">
+                    {{post.comments}}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let post">
+                    // TODO: Delete button
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        </table>
+
+    </div>
+</div>
+
